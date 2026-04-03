@@ -117,3 +117,51 @@ footer {
   margin-top: 40px;
   border-top: 3px solid var(--blue);
 }
+/* HEADER – layoutfix */
+.header {
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    align-items: center;
+    padding: 20px 40px;
+    border-bottom: 4px solid var(--blue);
+    background: var(--white);
+}
+
+.header-left img {
+    height: 120px;
+    width: auto;
+}
+
+.header-center {
+    text-align: center;
+}
+
+.header-center h1 {
+    font-size: 40px;
+    margin: 0;
+}
+
+.header-center .tagline {
+    font-size: 20px;
+    margin-top: 5px;
+    color: var(--blue);
+}
+
+.header-right {
+    text-align: right;
+}
+
+.language-switch {
+    display: flex;
+    justify-content: flex-end;
+    gap: 4px;
+    white-space: nowrap;
+    font-size: 14px;
+}
+
+.language-switch a {
+    color: var(--blue);
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 3px;
+}
