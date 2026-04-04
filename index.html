@@ -2,64 +2,123 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-    <meta charset="UTF-8">
-    <title>Jobb45+.se</title>
-    <link rel="stylesheet" href="style.css">
-    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jobb45+</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f7f7f7;
+            color: #222;
+        }
+
+        header {
+            background: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #eee;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #ff7a00;
+        }
+
+        nav a {
+            margin-left: 12px;
+            text-decoration: none;
+            color: #444;
+            font-size: 14px;
+        }
+
+        .hero {
+            padding: 60px 20px;
+            text-align: center;
+            background: white;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: auto;
+            line-height: 1.6;
+        }
+
+        .buttons {
+            margin-top: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .btn {
+            background: #ff7a00;
+            color: white;
+            padding: 14px 22px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        section {
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h2 {
+            color: #ff7a00;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            line-height: 1.8;
+        }
+    </style>
 </head>
-
 <body>
-<header class="header">
-    <div class="header-left">
-        <img src="images/logo.png" class="logo" alt="Jobb45+ logga">
-    </div>
 
-    <div class="header-center">
-        <h1>Välkommen till Jobb45+</h1>
-        <p class="tagline">Där erfarenhet, arbetsmoral och livskunskap ska räknas.</p>
-    </div>
-
-    <div class="header-right">
-        <div class="language-switch">
-            <a href="#">SV</a> |
-            <a href="#">EN</a> |
-            <a href="#">AR</a> |
-            <a href="#">FI</a> |
-            <a href="#">PL</a> |
-            <a href="#">DE</a> |
-            <a href="#">FR</a>
-        </div>
-    </div>
+<header>
+    <div class="logo">Jobb45+</div>
+    <nav>
+        <a href="#">SV</a>
+        <a href="#">EN</a>
+        <a href="#">AR</a>
+        <a href="#">FI</a>
+        <a href="#">PL</a>
+        <a href="#">DE</a>
+        <a href="#">FR</a>
+    </nav>
 </header>
 
+<div class="hero">
+    <h1>Välkommen till Jobb45+</h1>
+    <p>Där erfarenhet, arbetsmoral och livskunskap ska räknas.</p>
 
+    <div class="buttons">
+        <a class="btn" href="#">Sök jobb</a>
+        <a class="btn" href="#">Utbildning</a>
+        <a class="btn" href="#">Stöd & hjälp</a>
+        <a class="btn" href="#">Jobbannonser</a>
+        <a class="btn" href="#">CV & Personligt brev</a>
+        <a class="btn" href="#">Livsstöd</a>
+        <a class="btn" href="#">Starta eget</a>
+        <a class="btn" href="#">Rättigheter & Återstart</a>
+    </div>
+</div>
 
-
-<!-- KORTEN (ska ligga direkt under hero) -->
-<section class="quick-row">
-    <a class="quick-card" href="#">Sök jobb</a>
-    <a class="quick-card" href="#">Utbildning</a>
-    <a class="quick-card" href="#">Stöd & hjälp</a>
-    <a class="quick-card" href="#">Jobbannonser</a>
-    <a class="quick-card" href="#">CV & Personligt brev</a>
-    <a class="quick-card" href="#">Livsstöd</a>
-    <a class="quick-card" href="#">Starta eget</a>
-    <a class="quick-card" href="#">Rättigheter & Återstart</a>
-</section>
-
-
-<!-- INTRO -->
-<section class="intro">
-    <h2>Välkommen till Jobb45+.se</h2>
-    <p>
-        Jobb45+.se är en digital plattform för personer över 45 år som söker arbete, stöd eller vill starta eget.
-        Plattformen bygger på principen att arbetsmoral, erfarenhet och livskunskap ska räknas.
-        Här hittar du jobbannonser, vägledning, livsstöd och samhällsinformation – allt på ett ställe.
-    </p>
-</section>
-
-<!-- LEDORD -->
-<section class="values">
+<section>
     <h2>Ledord</h2>
     <ul>
         <li>Tillgänglighet</li>
@@ -69,10 +128,8 @@
     </ul>
 </section>
 
-<!-- FUNKTIONER -->
-<section class="features">
+<section>
     <h2>Funktioner</h2>
-
     <h3>Öppen del</h3>
     <ul>
         <li>Jobbannonser</li>
@@ -86,23 +143,9 @@
         <li>Skapa och spara CV och personligt brev</li>
         <li>Få personliga jobbförslag</li>
         <li>Bli synlig för arbetsgivare</li>
-        <li>Spara favoriter och anteckningar</li>
-        <li>Notifieringar om matchande jobb</li>
-    </ul>
-
-    <h3>För arbetsgivare</h3>
-    <ul>
-        <li>Skapa konto</li>
-        <li>Lägga upp jobbannonser</li>
-        <li>Söka efter kandidater</li>
-        <li>Skicka kontaktförfrågan</li>
     </ul>
 </section>
 
-<!-- FOOTER -->
-<footer>
-    <p>© 2024 Jobb45+.se – Arbetsmoral, erfarenhet och livskunskap ska räknas.</p>
-</footer>
-
 </body>
 </html>
+
