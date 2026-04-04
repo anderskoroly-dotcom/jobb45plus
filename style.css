@@ -126,3 +126,9 @@ footer {
   padding-top: 10px;
 }
 
+/* CENTRERA HELA RADEN MED 8 KORT */
+.quick-row {
+  max-width: 1400px;   /* styr radens totala bredd */
+  margin: 0 auto;      /* centrerar raden i mitten */
+}
+
