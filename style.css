@@ -1,93 +1,119 @@
-/* ====== HEADER ====== */
-
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 25px 40px;
-    background: white;
-    border-bottom: 3px solid #e0e0e0;
+:root {
+  --orange: #FF7A00;
+  --blue: #003366;
+  --white: #FFFFFF;
 }
 
-.header-left .logo {
-    height: 80px; /* gör loggan tydlig */
+/* BAS */
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--white);
+  font-family: Arial, sans-serif;
+  color: var(--blue);
+  line-height: 1.6;
+}
+
+/* HEADER */
+.header {
+  display: grid;
+  grid-template-columns: 200px 1fr 200px;
+  align-items: center;
+  padding: 20px 40px;
+  border-bottom: 4px solid var(--blue);
+  background: var(--white);
+}
+
+.header-left img {
+  height: 120px;
+  width: auto;
 }
 
 .header-center {
-    text-align: center;
+  text-align: center;
 }
 
 .header-center h1 {
-    font-size: 42px;
-    margin: 0;
+  font-size: 40px;
+  margin: 0;
 }
 
-.tagline {
-    font-size: 20px;
-    margin-top: 5px;
+.header-center .tagline {
+  font-size: 20px;
+  margin-top: 5px;
+  color: var(--blue);
 }
 
 .header-right {
-    display: flex;
-    align-items: flex-end; /* flyttar ner språkvalen */
-    padding-bottom: 10px;  /* ännu lite längre ner */
+  text-align: right;
 }
 
 .language-switch a {
-    text-decoration: none;
-    color: #444;
-    font-size: 18px;
-    margin: 0 4px;
+  color: var(--blue);
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 3px;
+}
+
+.language-switch {
+  display: flex;
+  justify-content: flex-end;
+  gap: 4px;
+  white-space: nowrap;
+  font-size: 14px;
 }
 
 
-/* ====== SNABBKORT ====== */
 
+/* NYA 8 KORT PÅ EN RAD */
 .quick-row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* CENTRERAR korten */
-    gap: 15px;
-    padding: 30px 20px;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 12px;
+  padding: 20px 40px;
 }
 
 .quick-card {
-    background: #005bbb;
-    color: white;
-    padding: 14px 22px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    min-width: 200px;
-    text-align: center;
+  background: var(--orange);
+  color: var(--white);
+  border: 3px solid var(--blue);
+  padding: 14px 10px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.quick-card:hover {
+  background: #e56d00;
 }
 
 
-/* ====== INTRO / SECTIONS ====== */
-
+/* TEXTSEKTIONER */
 section {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 0 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
 }
 
 h2 {
-    color: #ff7a00;
-    margin-bottom: 10px;
+  font-size: 32px;
+  margin-bottom: 15px;
 }
 
+ul {
+  padding-left: 20px;
+}
 
-/* ====== FOOTER ====== */
-
+/* FOOTER */
 footer {
-    background: #222;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-    font-size: 14px;
+  text-align: center;
+  padding: 30px;
+  background: #f0f0f0;
+  margin-top: 40px;
+  border-top: 3px solid var(--blue);
 }
-
 
 
