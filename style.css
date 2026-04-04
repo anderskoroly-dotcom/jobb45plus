@@ -156,6 +156,32 @@ footer {
   gap: 12px;
   padding: 10px 40px;
 }
+/* 5 kort på rad 1, centrerat */
+.quick-row {
+  display: grid;
+  grid-template-columns: repeat(5, max-content);
+  justify-content: center;
+  gap: 12px;
+  padding: 20px 40px;
+}
+
+/* Gör alla kort lika stora */
+.quick-card {
+  width: 220px !important;
+}
+
+/* Placera kort 6, 7, 8 i mittenkolumnerna */
+.quick-card:nth-child(6) {
+  grid-column: 2;
+}
+
+.quick-card:nth-child(7) {
+  grid-column: 3;
+}
+
+.quick-card:nth-child(8) {
+  grid-column: 4;
+}
 
 
 
