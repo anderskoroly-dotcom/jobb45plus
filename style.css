@@ -138,6 +138,7 @@ footer {
 
 /* GÖR ALLA KORT LIKA STORA */
 .quick-card {
-  width: 190px;
+  width: 200px !important;
 }
+
 
