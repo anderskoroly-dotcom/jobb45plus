@@ -128,9 +128,13 @@ footer {
 
 /* CENTRERA HELA RADEN MED 8 KORT */
 .quick-row {
-  max-width: 1400px;   /* styr radens totala bredd */
-  margin: 0 auto;      /* centrerar raden i mitten */
+  display: grid;
+  grid-template-columns: repeat(8, max-content);
+  justify-content: center;
+  gap: 12px;
+  padding: 20px 40px;
 }
+
 
 /* GÖR ALLA KORT LIKA STORA */
 .quick-card {
