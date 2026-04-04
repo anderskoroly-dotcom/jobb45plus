@@ -129,12 +129,10 @@ footer {
 /* CENTRERA HELA RADEN MED 8 KORT */
 .quick-row {
   display: grid;
-  grid-template-columns: repeat(8, max-content);
+  grid-template-columns: repeat(5, max-content);
   justify-content: center;
   gap: 12px;
   padding: 20px 40px;
-  max-width: 1900px;
-  margin: 0 auto;
 }
 
 /* GÖR ALLA KORT LIKA STORA */
