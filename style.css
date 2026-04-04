@@ -88,22 +88,14 @@ footer {
     margin-top: 40px;
     font-size: 14px;
 }
-/* --- FIX 1: Centrera snabbkorten --- */
+/* --- CENTRERA SNABBKORTEN UTAN ATT ÄNDRA FÄRGER --- */
 .quick-row {
-    display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
 }
 
-/* --- FIX 2: Flytta ner språkvalen lite --- */
+/* --- FLYTTA NER SPRÅKVALEN LITE --- */
 .header-right {
-    padding-top: 20px;   /* flyttar ner språkvalen */
+    margin-top: 10px;
 }
 
-/* --- FIX 3: Lite mer luft i headern --- */
-.header {
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
 
