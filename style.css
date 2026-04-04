@@ -116,4 +116,13 @@ footer {
   border-top: 3px solid var(--blue);
 }
 
+/* CENTRERA KORTEN UTAN ATT ÄNDRA GRID */
+.quick-row {
+  justify-items: center;
+}
+
+/* FLYTTA NER SPRÅKVALEN LITE */
+.header-right {
+  padding-top: 10px;
+}
 
