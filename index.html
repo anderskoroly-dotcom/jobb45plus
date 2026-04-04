@@ -1,92 +1,110 @@
-
 <!DOCTYPE html>
 <html lang="sv">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jobb45+</title>
+
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: #f7f7f7;
+            background: #f4f4f4;
             color: #222;
         }
 
+        /* HEADER */
         header {
             background: white;
-            padding: 20px;
+            padding: 25px 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 2px solid #eee;
+            border-bottom: 3px solid #e0e0e0;
         }
 
         .logo {
-            font-size: 28px;
+            font-size: 36px;
             font-weight: bold;
             color: #ff7a00;
         }
 
         nav a {
-            margin-left: 12px;
+            margin-left: 14px;
             text-decoration: none;
             color: #444;
-            font-size: 14px;
-        }
-
-        .hero {
-            padding: 60px 20px;
-            text-align: center;
-            background: white;
-        }
-
-        .hero h1 {
-            font-size: 40px;
-            margin-bottom: 10px;
-        }
-
-        .hero p {
-            font-size: 18px;
-            max-width: 600px;
-            margin: auto;
-            line-height: 1.6;
-        }
-
-        .buttons {
-            margin-top: 40px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 12px;
-        }
-
-        .btn {
-            background: #ff7a00;
-            color: white;
-            padding: 14px 22px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: bold;
             font-size: 16px;
         }
 
-        section {
-            padding: 40px 20px;
-            max-width: 900px;
-            margin: auto;
+        /* LAYOUT */
+        .layout {
+            display: flex;
+            margin-top: 20px;
         }
 
-        h2 {
-            color: #ff7a00;
+        /* VÄNSTER MENY */
+        .sidebar {
+            width: 260px;
+            background: white;
+            padding: 20px;
+            border-right: 3px solid #e0e0e0;
+            min-height: 100vh;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 12px 10px;
+            margin-bottom: 10px;
+            background: #ff7a00;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        /* HUVUDINNEHÅLL */
+        .content {
+            flex: 1;
+            padding: 40px;
+        }
+
+        h1 {
+            font-size: 42px;
             margin-bottom: 10px;
         }
 
-        ul {
-            line-height: 1.8;
+        p {
+            font-size: 18px;
+            max-width: 700px;
+            line-height: 1.6;
+        }
+
+        /* KORT */
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border: 3px solid #005bbb;
+            margin-bottom: 20px;
+            max-width: 700px;
+        }
+
+        .card h2 {
+            color: #ff7a00;
+            margin-top: 0;
+        }
+
+        /* FOOTER */
+        footer {
+            margin-top: 40px;
+            padding: 20px;
+            background: #222;
+            color: white;
+            text-align: center;
         }
     </style>
 </head>
+
 <body>
 
 <header>
@@ -102,50 +120,60 @@
     </nav>
 </header>
 
-<div class="hero">
-    <h1>Välkommen till Jobb45+</h1>
-    <p>Där erfarenhet, arbetsmoral och livskunskap ska räknas.</p>
+<div class="layout">
 
-    <div class="buttons">
-        <a class="btn" href="#">Sök jobb</a>
-        <a class="btn" href="#">Utbildning</a>
-        <a class="btn" href="#">Stöd & hjälp</a>
-        <a class="btn" href="#">Jobbannonser</a>
-        <a class="btn" href="#">CV & Personligt brev</a>
-        <a class="btn" href="#">Livsstöd</a>
-        <a class="btn" href="#">Starta eget</a>
-        <a class="btn" href="#">Rättigheter & Återstart</a>
+    <!-- SIDOMENY -->
+    <div class="sidebar">
+        <a href="#">Sök jobb</a>
+        <a href="#">Utbildning</a>
+        <a href="#">Stöd & hjälp</a>
+        <a href="#">Jobbannonser</a>
+        <a href="#">CV & Personligt brev</a>
+        <a href="#">Livsstöd</a>
+        <a href="#">Starta eget</a>
+        <a href="#">Rättigheter & Återstart</a>
+    </div>
+
+    <!-- HUVUDINNEHÅLL -->
+    <div class="content">
+        <h1>Välkommen till Jobb45+</h1>
+        <p>Där erfarenhet, arbetsmoral och livskunskap ska räknas.</p>
+
+        <div class="card">
+            <h2>Ledord</h2>
+            <ul>
+                <li>Tillgänglighet</li>
+                <li>Självständighet</li>
+                <li>Struktur</li>
+                <li>Samverkan</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Funktioner</h2>
+            <h3>Öppen del</h3>
+            <ul>
+                <li>Jobbannonser</li>
+                <li>CV- och brevguider</li>
+                <li>Livsstöd och samhällsinformation</li>
+                <li>Rättigheter & Återstart</li>
+            </ul>
+
+            <h3>Inloggad del</h3>
+            <ul>
+                <li>Skapa och spara CV och personligt brev</li>
+                <li>Få personliga jobbförslag</li>
+                <li>Bli synlig för arbetsgivare</li>
+            </ul>
+        </div>
     </div>
 </div>
 
-<section>
-    <h2>Ledord</h2>
-    <ul>
-        <li>Tillgänglighet</li>
-        <li>Självständighet</li>
-        <li>Struktur</li>
-        <li>Samverkan</li>
-    </ul>
-</section>
-
-<section>
-    <h2>Funktioner</h2>
-    <h3>Öppen del</h3>
-    <ul>
-        <li>Jobbannonser</li>
-        <li>CV- och brevguider</li>
-        <li>Livsstöd och samhällsinformation</li>
-        <li>Rättigheter & Återstart</li>
-    </ul>
-
-    <h3>Inloggad del</h3>
-    <ul>
-        <li>Skapa och spara CV och personligt brev</li>
-        <li>Få personliga jobbförslag</li>
-        <li>Bli synlig för arbetsgivare</li>
-    </ul>
-</section>
+<footer>
+    © 2026 Jobb45+. Alla rättigheter reserverade.
+</footer>
 
 </body>
 </html>
+
 
