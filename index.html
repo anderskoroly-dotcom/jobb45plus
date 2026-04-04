@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="sv">
 <head>
@@ -16,15 +17,15 @@
         /* HEADER */
         header {
             background: white;
-            padding: 25px 30px;
+            padding: 30px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 3px solid #e0e0e0;
+            border-bottom: 4px solid #e0e0e0;
         }
 
         .logo {
-            font-size: 36px;
+            font-size: 42px;
             font-weight: bold;
             color: #ff7a00;
         }
@@ -33,65 +34,44 @@
             margin-left: 14px;
             text-decoration: none;
             color: #444;
-            font-size: 16px;
-        }
-
-        /* LAYOUT */
-        .layout {
-            display: flex;
-            margin-top: 20px;
-        }
-
-        /* VÄNSTER MENY */
-        .sidebar {
-            width: 260px;
-            background: white;
-            padding: 20px;
-            border-right: 3px solid #e0e0e0;
-            min-height: 100vh;
-        }
-
-        .sidebar a {
-            display: block;
-            padding: 12px 10px;
-            margin-bottom: 10px;
-            background: #ff7a00;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: bold;
-        }
-
-        /* HUVUDINNEHÅLL */
-        .content {
-            flex: 1;
-            padding: 40px;
-        }
-
-        h1 {
-            font-size: 42px;
-            margin-bottom: 10px;
-        }
-
-        p {
             font-size: 18px;
-            max-width: 700px;
-            line-height: 1.6;
         }
 
-        /* KORT */
+        /* HERO / INTRO */
+        .hero {
+            text-align: center;
+            padding: 50px 20px 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 22px;
+            margin-top: 0;
+        }
+
+        /* SNABBKORT */
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 30px 20px;
+        }
+
         .card {
             background: white;
             padding: 20px;
+            width: 260px;
+            text-align: center;
             border-radius: 8px;
             border: 3px solid #005bbb;
-            margin-bottom: 20px;
-            max-width: 700px;
-        }
-
-        .card h2 {
-            color: #ff7a00;
-            margin-top: 0;
+            font-size: 20px;
+            font-weight: bold;
+            color: #005bbb;
         }
 
         /* FOOTER */
@@ -101,6 +81,7 @@
             background: #222;
             color: white;
             text-align: center;
+            font-size: 14px;
         }
     </style>
 </head>
@@ -110,67 +91,34 @@
 <header>
     <div class="logo">Jobb45+</div>
     <nav>
-        <a href="#">SV</a>
-        <a href="#">EN</a>
-        <a href="#">AR</a>
-        <a href="#">FI</a>
-        <a href="#">PL</a>
-        <a href="#">DE</a>
+        <a href="#">SV</a> |
+        <a href="#">EN</a> |
+        <a href="#">AR</a> |
+        <a href="#">FI</a> |
+        <a href="#">PL</a> |
+        <a href="#">DE</a> |
         <a href="#">FR</a>
     </nav>
 </header>
 
-<div class="layout">
+<div class="hero">
+    <h1>Välkommen till Jobb45+</h1>
+    <p>Där erfarenhet, arbetsmoral och livskunskap ska räknas.</p>
+</div>
 
-    <!-- SIDOMENY -->
-    <div class="sidebar">
-        <a href="#">Sök jobb</a>
-        <a href="#">Utbildning</a>
-        <a href="#">Stöd & hjälp</a>
-        <a href="#">Jobbannonser</a>
-        <a href="#">CV & Personligt brev</a>
-        <a href="#">Livsstöd</a>
-        <a href="#">Starta eget</a>
-        <a href="#">Rättigheter & Återstart</a>
-    </div>
-
-    <!-- HUVUDINNEHÅLL -->
-    <div class="content">
-        <h1>Välkommen till Jobb45+</h1>
-        <p>Där erfarenhet, arbetsmoral och livskunskap ska räknas.</p>
-
-        <div class="card">
-            <h2>Ledord</h2>
-            <ul>
-                <li>Tillgänglighet</li>
-                <li>Självständighet</li>
-                <li>Struktur</li>
-                <li>Samverkan</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h2>Funktioner</h2>
-            <h3>Öppen del</h3>
-            <ul>
-                <li>Jobbannonser</li>
-                <li>CV- och brevguider</li>
-                <li>Livsstöd och samhällsinformation</li>
-                <li>Rättigheter & Återstart</li>
-            </ul>
-
-            <h3>Inloggad del</h3>
-            <ul>
-                <li>Skapa och spara CV och personligt brev</li>
-                <li>Få personliga jobbförslag</li>
-                <li>Bli synlig för arbetsgivare</li>
-            </ul>
-        </div>
-    </div>
+<div class="cards">
+    <div class="card">Sök jobb</div>
+    <div class="card">Utbildning</div>
+    <div class="card">Stöd & hjälp</div>
+    <div class="card">Jobbannonser</div>
+    <div class="card">CV & Personligt brev</div>
+    <div class="card">Livsstöd</div>
+    <div class="card">Starta eget</div>
+    <div class="card">Rättigheter & Återstart</div>
 </div>
 
 <footer>
-    © 2026 Jobb45+. Alla rättigheter reserverade.
+    © 2024 Jobb45+.se – Arbetsmoral, erfarenhet och livskunskap ska räknas.
 </footer>
 
 </body>
