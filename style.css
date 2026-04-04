@@ -139,6 +139,23 @@ footer {
 .quick-card {
   width: 220px !important;
 }
+/* RAD 1 – 5 KORT */
+.row-1 {
+  display: grid;
+  grid-template-columns: repeat(5, max-content);
+  justify-content: center;
+  gap: 12px;
+  padding: 20px 40px;
+}
+
+/* RAD 2 – 3 KORT */
+.row-2 {
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  justify-content: center;
+  gap: 12px;
+  padding: 10px 40px;
+}
 
 
 
