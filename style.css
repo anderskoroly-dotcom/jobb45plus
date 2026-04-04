@@ -132,3 +132,7 @@ footer {
   margin: 0 auto;      /* centrerar raden i mitten */
 }
 
+/* GÖR ALLA KORT LIKA STORA */
+.quick-card {
+  width: 160px;
+}
