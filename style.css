@@ -88,14 +88,6 @@ footer {
     margin-top: 40px;
     font-size: 14px;
 }
-/* --- CENTRERA SNABBKORTEN UTAN ATT ÄNDRA FÄRGER --- */
-.quick-row {
-    justify-content: center;
-}
 
-/* --- FLYTTA NER SPRÅKVALEN LITE --- */
-.header-right {
-    margin-top: 10px;
-}
 
 
