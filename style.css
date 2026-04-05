@@ -182,22 +182,10 @@ footer {
 .quick-card:nth-child(8) {
   grid-column: 4;
 }
-
-}
-
-.header-center h1 {
-    margin-bottom: 5px;
-}
-
-.header-center .tagline {
-    margin-top: 0;
-}
-.quick-row {
-    margin-top: 40px !important;
-}
 .header-center {
-    padding-top: 20px;
+    transform: translateY(10px);
 }
+
 
 
 
