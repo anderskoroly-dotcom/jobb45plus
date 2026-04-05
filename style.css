@@ -221,9 +221,9 @@ footer {
 }
 
 .menu-left-btn {
-    background: #ff7a00;
+    background: #ff7a00;        /* orange */
     color: white;
-    border: none;
+    border: 3px solid #005bbb;  /* blå kant */
     padding: 12px 24px;
     border-radius: 6px;
     font-size: 18px;
@@ -233,8 +233,8 @@ footer {
 
 .menu-left-btn:hover {
     background: #e56d00;
+    border-color: #004a99;      /* mörkare blå vid hover */
 }
-
 
 
 
