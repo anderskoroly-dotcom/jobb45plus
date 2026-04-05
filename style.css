@@ -185,6 +185,10 @@ footer {
 .header-center {
     transform: translateY(10px);
 }
+.header-center {
+    align-self: end;
+    transform: translateY(5px);
+}
 
 
 
