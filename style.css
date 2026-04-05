@@ -236,5 +236,14 @@ footer {
     border-color: #004a99;      /* mörkare blå vid hover */
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+footer {
+    margin-top: auto;
+}
 
 
