@@ -196,7 +196,7 @@ footer {
     background-repeat: no-repeat;
     padding: 40px 0;
     position: relative;
-    min-height: 300px; /* lägg till denna */
+    min-height: 400px; 
 }
 
 }
