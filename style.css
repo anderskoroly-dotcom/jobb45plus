@@ -183,5 +183,16 @@ footer {
   grid-column: 4;
 }
 
+header {
+    margin-top: 40px;   /* flyttar ner hela headern */
+}
+
+header h1 {
+    margin-bottom: 5px; /* lite mindre luft mellan titel och undertext */
+}
+
+header p {
+    margin-top: 0;      /* håller ihop texten snyggt */
+}
 
 
