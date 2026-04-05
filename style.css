@@ -19,7 +19,7 @@ body {
   display: grid;
   grid-template-columns: 200px 1fr 200px;
   align-items: center;
-  padding: 80px 40px;
+  padding: 20px 40px;
   border-bottom: 4px solid var(--blue);
   background: var(--white);
 }
@@ -183,8 +183,6 @@ footer {
   grid-column: 4;
 }
 
-.header {
-    margin-top: 40px;
 }
 
 .header-center h1 {
