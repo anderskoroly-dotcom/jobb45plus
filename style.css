@@ -189,6 +189,27 @@ footer {
     align-self: end;
     transform: translateY(5px);
 }
+.quick-bg {
+    background-image: url('images/norrkoping.jpg'); /* byt till rätt sökväg */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 40px 0;
+    position: relative;
+}
+
+.quick-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    z-index: 1;
+}
+
+.quick-bg > * {
+    position: relative;
+    z-index: 2;
+}
 
 
 
