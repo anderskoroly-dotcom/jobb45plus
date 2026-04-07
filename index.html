@@ -67,4 +67,19 @@
 
 </body>
 </html>
+<script>
+const menuBtn = document.querySelector(".menu-left-btn");
+const dropdown = document.getElementById("menu-dropdown");
+
+menuBtn.addEventListener("click", () => {
+    dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+});
+
+// Stäng om man klickar utanför
+document.addEventListener("click", (e) => {
+    if (!menuBtn.contains(e.target) && !dropdown.contains(e.target)) {
+        dropdown.style.display = "none";
+    }
+});
+</script>
 
