@@ -248,17 +248,19 @@ footer {
     position: relative;
     z-index: 2;
 }
+/* MENY-KORTETS WRAPPER */
 .menu-left-wrapper {
-    display: flex;
-    justify-content: flex-start;
-    padding-left: 40px; /* flyttar knappen in från vänster */
-    margin-top: 20px;   /* avstånd ned från snabbknapparna */
+    position: relative;      /* gör att dropdownen fäster under kortet */
+    display: inline-block;   /* gör att dropdownen blir lika bred som kortet */
+    margin-left: 40px;       /* samma visuella position som tidigare */
+    margin-top: 20px;        /* avstånd ned från snabbknapparna */
 }
 
+/* MENY-KNAPPEN */
 .menu-left-btn {
-    background: #ff7a00;        /* orange */
+    background: #ff7a00;     /* orange */
     color: white;
-    border: 3px solid #005bbb;  /* blå kant */
+    border: 3px solid #005bbb; /* blå kant */
     padding: 12px 24px;
     border-radius: 6px;
     font-size: 18px;
@@ -268,9 +270,41 @@ footer {
 
 .menu-left-btn:hover {
     background: #e56d00;
-    border-color: #004a99;      /* mörkare blå vid hover */
+    border-color: #004a99;   /* mörkare blå vid hover */
 }
 
+/* DROPDOWN-MENYN */
+.menu-dropdown {
+    display: none;           /* dold tills man klickar */
+    position: absolute;
+    top: 100%;               /* direkt under knappen */
+    left: 0;
+    width: 220px;            /* samma bredd som knappen */
+    margin-left: 10px;       /* luft från vänster */
+    background: var(--white);
+    border: 4px solid var(--blue);
+    border-radius: 8px;
+    padding: 20px;
+    z-index: 9999;
+}
+
+.menu-dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-dropdown li {
+    margin: 15px 0;
+}
+
+.menu-dropdown a {
+    text-decoration: none;
+    font-size: 18px;
+    color: var(--blue);
+}
+
+/* FOOTER FIX */
 body {
     display: flex;
     flex-direction: column;
