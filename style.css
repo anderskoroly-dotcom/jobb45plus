@@ -14,15 +14,17 @@ body {
   line-height: 1.6;
 }
 .menu-left-wrapper {
-    position: relative; /* viktigt! gör att dropdownen kan fästas under kortet */
+    position: relative;
+    display: inline-block;
 }
 
 .menu-dropdown {
     display: none;
     position: absolute;
-    top: 100%; /* direkt under kortet */
+    top: 100%;
     left: 0;
-    width: 100%;
+    width: 220px; /* samma bredd som kortet */
+    margin-left: 10px; /* luft från vänster */
     background: var(--white);
     border: 4px solid var(--blue);
     border-radius: 8px;
