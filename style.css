@@ -13,6 +13,38 @@ body {
   color: var(--blue);
   line-height: 1.6;
 }
+.menu-left-wrapper {
+    position: relative; /* viktigt! gör att dropdownen kan fästas under kortet */
+}
+
+.menu-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%; /* direkt under kortet */
+    left: 0;
+    width: 100%;
+    background: var(--white);
+    border: 4px solid var(--blue);
+    border-radius: 8px;
+    padding: 20px;
+    z-index: 9999;
+}
+
+.menu-dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-dropdown li {
+    margin: 15px 0;
+}
+
+.menu-dropdown a {
+    text-decoration: none;
+    font-size: 18px;
+    color: var(--blue);
+}
 
 /* HEADER */
 .header {
