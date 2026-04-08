@@ -270,7 +270,7 @@ footer {
 
 .menu-left-btn:hover {
     background: #e56d00;
-    border-color: #004a99;   /* mörkare blå vid hover */
+    border-color: var(--blue);   /* mörkare blå vid hover */
 }
 
 /* DROPDOWN-MENYN */
