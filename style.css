@@ -304,15 +304,20 @@ footer {
     color: var(--blue);
 }
 
-/* FOOTER FIX */
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+/* FOOTER */
+.site-footer {
+    text-align: center;
+    padding: 20px 10px;
+    margin-top: auto;
+    background: var(--white);
+    border-top: 4px solid var(--blue);
+    color: var(--blue);
+    font-size: 16px;
+    font-weight: 500;
 }
 
-footer {
-    margin-top: auto;
+.site-footer p {
+    margin: 0;
 }
 
 
