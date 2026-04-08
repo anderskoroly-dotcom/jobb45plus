@@ -319,5 +319,31 @@ footer {
 .site-footer p {
     margin: 0;
 }
+.menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-list li {
+    border-bottom: 1px solid var(--blue);
+}
+
+.menu-list li:last-child {
+    border-bottom: none;
+}
+
+.menu-list a {
+    display: block;
+    padding: 14px 20px;
+    color: var(--blue);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.menu-list a:hover {
+    background: #f0f6ff;
+}
 
 
