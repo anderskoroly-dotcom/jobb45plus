@@ -142,8 +142,3 @@
     margin-top: 40px;
 }
 
-/* LOGGA – reset av felaktiga regler längre ned */
-.logo-emblem,
-.logo-emblem img {
-    position: static !important;
-}
