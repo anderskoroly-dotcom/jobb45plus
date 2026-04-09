@@ -62,17 +62,18 @@
 .hero {
     margin-top: 0;
 }
-/* RULLGARDIN – VÅGRÄT + CENTRERAD TEXT */
+/* RULLGARDIN – vågrät + centrerad text */
 .menu-dropdown {
     display: none;
     background: var(--blue);
-    padding: 8px 40px;
     border-bottom: 4px solid var(--orange);
+    height: 44px;          /* fast höjd på raden */
+    padding: 0 40px;       /* bara sidopadding */
 }
 
 .menu-list {
     display: flex;
-    align-items: center;
+    align-items: center;   /* centrerar texten vertikalt */
     gap: 32px;
     list-style: none;
     margin: 0;
@@ -86,8 +87,7 @@
 }
 
 .menu-list a {
-    display: inline-block;
-    padding: 0;
+    display: block;
     white-space: nowrap;
     font-size: 20px;
     font-weight: 600;
@@ -98,6 +98,7 @@
 #menu-button {
     cursor: pointer;
 }
+
 
 
 
@@ -142,3 +143,8 @@
     margin-top: 40px;
 }
 
+/* LOGGA – reset av felaktiga regler längre ned */
+.logo-emblem,
+.logo-emblem img {
+    position: static !important;
+}
