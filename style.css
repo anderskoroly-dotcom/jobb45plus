@@ -36,10 +36,9 @@
 .languages {
     font-size: 20px;
     font-weight: 600;
-    cursor: pointer;
+    cursor: pointer; /* gör att pekaren blir hand */
 }
-          /* gör att pekaren blir hand */
-}
+
 
 /* LOGGAN I CIRKELN */
 .logo-emblem {
