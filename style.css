@@ -62,36 +62,40 @@
 .hero {
     margin-top: 0;
 }
-/* RULLGARDIN – LÅG HORISONTELL FLIK */
+/* RULLGARDIN – VÅGRÄT SOM UNIONEN */
 .menu-dropdown {
-    display: none;                 /* visas bara när JS öppnar den */
+    display: none;
     background: var(--blue);
-    padding: 8px 40px;             /* låg flik, inte hög ruta */
+    padding: 10px 40px;        /* låg flik */
     border-bottom: 4px solid var(--orange);
 }
 
 /* LISTAN LIGGER PÅ RAD */
 .menu-list {
+    display: flex;             /* gör listan vågrät */
+    flex-direction: row;
+    gap: 32px;                 /* avstånd mellan valen */
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex;                 /* gör att allt hamnar på rad */
-    gap: 32px;                     /* avstånd mellan valen */
 }
 
-/* INGA LODRÄTA LINJER MELLAN */
+/* INGA LODRÄTA LINJER */
 .menu-list li {
+    margin: 0;
+    padding: 0;
     border: none;
 }
 
-/* LÄNKARNA – SOM UNIONEN */
+/* LÄNKARNA – LÅG HÖJD, INGEN RADBRYTNING */
 .menu-list a {
     display: inline-block;
-    padding: 4px 0;                /* lite luft, men låg höjd */
+    padding: 4px 0;            /* låg höjd */
     color: white;
     text-decoration: none;
     font-size: 20px;
     font-weight: 600;
+    white-space: nowrap;       /* hindrar radbrytning */
 }
 
 /* MENYKNAPPEN */
