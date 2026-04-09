@@ -5,6 +5,12 @@
 
 /* HEADER */
 .main-header {
+    .main-header {
+    justify-content: center;
+    gap: 80px;        /* minska från 120 om det blev för brett */
+    padding: 0 40px;  /* drar in allt från kanterna */
+}
+
     position: relative;
     background: var(--orange);
     height: 100px;
@@ -27,8 +33,12 @@
     align-items: center;
 }
 
-.header-link {
-    cursor: pointer;
+.header-link,
+.languages {
+    font-size: 18px;      /* prova 18–20px */
+    font-weight: 500;
+}
+
 }
 
 /* CIRKEL MED LOGGA */
@@ -48,9 +58,17 @@
     box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
 
-.logo-emblem img {
-    width: 85%;   /* justera 80–90% tills det ser bra ut */
-    height: auto;
+.main-header {
+    position: relative;
+    z-index: 10;
+    margin-top: 25px;      /* som vi sa tidigare */
+    margin-bottom: 20px;   /* ger luft mellan header och bild */
+}
+
+.hero {
+    margin-top: 0;
+}
+
 }
 
 /* RULLGARDIN */
