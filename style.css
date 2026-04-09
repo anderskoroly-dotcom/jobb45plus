@@ -57,16 +57,6 @@
     height: auto;
 }
 
-
-.main-header {
-    position: relative;
-    z-index: 10;
-    margin-bottom: 20px;
-    justify-content: center;
-    gap: 80px;
-    padding: 0 40px;
-}
-
 .hero {
     margin-top: 0;
 }
