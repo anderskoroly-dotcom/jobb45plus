@@ -3,82 +3,67 @@
 <html lang="sv">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jobb45+.se</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header class="main-header">
-    <div class="header-left">
-        <span class="header-link">Sök</span>
-        <span class="header-link">Logga in</span>
+    <!-- NY HEADER MED CIRKEL-EMBLEM -->
+    <header class="main-header">
+        <div class="header-left">
+            <span class="header-link">Sök</span>
+            <span class="header-link">Logga in</span>
+        </div>
+
+        <div class="logo-emblem">
+            <img src="images/logo.png" alt="Jobb45+ logga">
+        </div>
+
+        <div class="header-right">
+            <span id="menu-button" class="header-link">Meny</span>
+            <span class="header-link languages">
+                SV | FI | EN | DE | FR | ES | AR
+            </span>
+        </div>
+    </header>
+
+    <!-- RULLGARDIN -->
+    <div id="menu-dropdown" class="menu-dropdown">
+        <ul class="menu-list">
+            <li><a href="#">Arbetslös & A‑kassa</a></li>
+            <li><a href="#">Lön, villkor & avtal</a></li>
+            <li><a href="#">Uppsägning & trygghet</a></li>
+            <li><a href="#">Arbetsmiljö & diskriminering</a></li>
+            <li><a href="#">Kompetens & utbildning</a></li>
+            <li><a href="#">Stöd & kontakt</a></li>
+        </ul>
     </div>
 
-    <div class="logo-emblem">
-        <img src="logga.png" alt="Jobb45+ logga">
-    </div>
+    <!-- HERO-SEKTION (behåll din bild) -->
+    <section class="hero">
+        <img src="images/hero.jpg" alt="">
+        <div class="hero-text">
+            <h1>Välkommen till Jobb45+.se</h1>
+            <p>För dig med arbetslivserfarenhet, arbetsmoral och framtidstro.</p>
+        </div>
+    </section>
 
-    <div class="header-right">
-        <span class="header-link">Meny</span>
-        <span class="header-link">SV | EN</span>
-    </div>
-</header>
+    <!-- FOOTER (behåll som du har) -->
+    <footer class="footer">
+        © Merit & Craft – alla rättigheter förbehållna
+    </footer>
 
-<div id="menu-dropdown" class="menu-dropdown">
-    <!-- Menyn du redan har -->
-</div>
+    <!-- JS FÖR RULLGARDIN -->
+    <script>
+        const menuBtn = document.getElementById("menu-button");
+        const dropdown = document.getElementById("menu-dropdown");
 
-
-<!-- HERO / BAKGRUNDSBILD -->
-<div class="quick-bg">
-
-    <!-- KORTEN -->
-    <div class="quick-row">
-        <a class="quick-card" href="#">Arbetslös</a>
-        <a class="quick-card" href="#">Arbetslöshetsförsäkran</a>
-        <a class="quick-card" href="#">Rättigheter / skyldigheter</a>
-        <a class="quick-card" href="#">Söka jobb</a>
-    </div>
-
-    <!-- MENYKNAPPEN -->
-<div class="menu-left-wrapper">
-    <button class="menu-left-btn">Meny</button>
-</ul>
-    <div id="menu-dropdown" class="menu-dropdown"<ul class="menu-list">
-    <li><a href="arbetslos-akassa.html">Arbetslös & A‑kassa</a></li>
-    <li><a href="lon-villkor-avtal.html">Lön, villkor & avtal</a></li>
-    <li><a href="uppsagning-trygghet.html">Uppsägning & trygghet</a></li>
-    <li><a href="arbetsmiljo-diskriminering.html">Arbetsmiljö & diskriminering</a></li>
-    <li><a href="kompetens-utbildning.html">Kompetens & utbildning</a></li>
-    <li><a href="stod-kontakt.html">Stöd & kontakt</a></li>
-</ul>
-    </div>
-</div>
-
-
-</div>
-
-<!-- FOOTER -->
-<footer class="site-footer">
-    <p>© Merit & Craft – alla rättigheter förbehållna</p>
-</footer>
+        menuBtn.addEventListener("click", () => {
+            dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+        });
+    </script>
 
 </body>
 </html>
-<script>
-const menuBtn = document.querySelector(".menu-left-btn");
-const dropdown = document.getElementById("menu-dropdown");
-
-menuBtn.addEventListener("click", () => {
-    dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
-});
-
-// Stäng om man klickar utanför
-document.addEventListener("click", (e) => {
-    if (!menuBtn.contains(e.target) && !dropdown.contains(e.target)) {
-        dropdown.style.display = "none";
-    }
-});
-</script>
-
