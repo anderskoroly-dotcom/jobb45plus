@@ -62,39 +62,32 @@
 .hero {
     margin-top: 0;
 }
-/* RULLGARDIN – KORREKT VERSION */
+/* RULLGARDIN – LÅG HORISONTELL FLIK */
 .menu-dropdown {
-    display: none;
+    display: none;                 /* visas bara när JS öppnar den */
     background: var(--blue);
-    padding: 24px 40px;
+    padding: 8px 40px;             /* låg flik, inte hög ruta */
     border-bottom: 4px solid var(--orange);
 }
 
-.menu-dropdown a {
-    color: white;
-    font-size: 20px;
-    font-weight: 600;
-    text-decoration: none;
-}
-
-/* LISTAN I RULLGARDINEN */
+/* LISTAN LIGGER PÅ RAD */
 .menu-list {
     list-style: none;
     margin: 0;
     padding: 0;
+    display: flex;                 /* gör att allt hamnar på rad */
+    gap: 32px;                     /* avstånd mellan valen */
 }
 
+/* INGA LODRÄTA LINJER MELLAN */
 .menu-list li {
-    border-bottom: 1px solid rgba(255,255,255,0.3);
+    border: none;
 }
 
-.menu-list li:last-child {
-    border-bottom: none;
-}
-
+/* LÄNKARNA – SOM UNIONEN */
 .menu-list a {
-    display: block;
-    padding: 14px 0;
+    display: inline-block;
+    padding: 4px 0;                /* lite luft, men låg höjd */
     color: white;
     text-decoration: none;
     font-size: 20px;
