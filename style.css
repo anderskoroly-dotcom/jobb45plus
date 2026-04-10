@@ -57,6 +57,7 @@
     width: 130%;
     height: auto;
     display: block;
+    transform: translateY(1px);
 }
 
 .hero {
