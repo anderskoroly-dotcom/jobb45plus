@@ -72,7 +72,8 @@
 
 .menu-list {
     display: flex;
-    align-items: center;   /* centrerar texten vertikalt */
+    align-items: center;   /* CENTRERAR VERTIKALT */
+    justify-content: center; /* CENTRERAR HORISONTELLT */
     gap: 32px;
     list-style: none;
     margin: 0;
@@ -92,6 +93,7 @@
     font-weight: 600;
     color: white;
     text-decoration: none;
+    padding: 10px 0;   /* <-- LÄGG DEN HÄR */
 }
 
 #menu-button {
