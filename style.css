@@ -46,11 +46,7 @@
     height: 140px;
     background: white;
     border-radius: 50%;
-    .logo-emblem {
-    .logo-emblem {
-    border: 10px solid red;
-}
-
+    border: 4px solid var(--blue);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -62,7 +58,7 @@
     height: auto;
     display: block;
 }
-    
+
 .hero {
     margin-top: 0;
 }
