@@ -46,10 +46,7 @@
     height: 140px;
     background: white;
     border-radius: 50%;
-    .logo-emblem {
-    border: 10px solid red;
-}
-
+    border: 10px solid var(--blue); /* blå kant runt cirkeln */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -62,6 +59,7 @@
     display: block;
     transform: translateY(1px);
 }
+
 
 .hero {
     margin-top: 0;
