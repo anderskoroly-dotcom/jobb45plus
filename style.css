@@ -15,7 +15,7 @@
     justify-content: center;   /* centrerar vänster – logga – höger */
     align-items: center;
     gap: 80px;                 /* justera 60–100 tills det är symmetriskt */
-    padding: 10px 40px;
+    padding: 8px 40px;
     color: white;
     font-size: 20px;           /* större text */
     font-weight: 600;
