@@ -69,10 +69,10 @@
 .menu-dropdown {
     display: none;
     background: var(--blue);
-    border-top: 4px solid var(--blue);
-    height: 44px;          /* fast höjd på raden */
-    padding: 0 40px;       /* bara sidopadding */
+    border-bottom: 4px solid var(--orange);
+    border-top: 4px solid var(--blue); /* ← DENNA ÄR DEN SOM SAKNAS */
 }
+
 
 .menu-list {
     display: flex;
