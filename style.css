@@ -47,6 +47,7 @@
     background: white;
     border-radius: 50%;
     border: none;
+    margin: 4px; /* gör att den blå ramen syns bakom loggan */
     display: flex;
     align-items: center;
     justify-content: center;
