@@ -46,7 +46,7 @@
     height: 140px;
     background: white;
     border-radius: 50%;
-    border: 10px solid var(--blue); /* blå kant runt cirkeln */
+    border: none;
     display: flex;
     align-items: center;
     justify-content: center;
