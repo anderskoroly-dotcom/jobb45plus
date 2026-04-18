@@ -55,9 +55,10 @@
 }
 
 .logo-emblem img {
-    border: 4px solid #007BFF; /* blå kant */
-    padding: 6px;              /* luft mellan loggan och kanten */
-    box-sizing: border-box;    /* gör att storleken inte hoppar */
+    width: 160%;
+    height: auto;
+    display: block;
+    transform: translateY(1px);
 }
 
 .hero {
