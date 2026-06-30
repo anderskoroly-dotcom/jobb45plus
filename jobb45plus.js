@@ -1,4 +1,5 @@
-fetch("https://jobsearch.api.jobtechdev.se/search?limit=20&offset=0")
+// 🔵 Hämta jobb från JobTech API
+fetch("https://jobsearch.api.jobtechdev.se/search?limit=50&offset=0")
   .then(response => response.json())
   .then(data => {
     const container = document.getElementById("job-container");
@@ -20,4 +21,17 @@ fetch("https://jobsearch.api.jobtechdev.se/search?limit=20&offset=0")
   .catch(err => {
     console.error("Fel vid hämtning av jobb:", err);
   });
+
+
+// 🔍 Sökfunktion
+document.getElementById("searchButton").addEventListener("click", () => {
+  const searchTerm = document.getElementById("searchInput").value.toLowerCase();
+  const jobItems = document.querySelectorAll(".job-item");
+
+  jobItems.forEach(item => {
+    const text = item.textContent.toLowerCase();
+    item.style.display = text.includes(searchTerm) ? "block" : "none";
+  });
+});
+
 
