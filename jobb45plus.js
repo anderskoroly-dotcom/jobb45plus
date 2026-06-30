@@ -48,35 +48,40 @@ function applyFilters(is45plus = false, noEducation = false) {
     "mentor", "handledare", "coach", "teamledare", "arbetsledare", "gruppledare",
     "senior", "specialist", "expert", "chef", "ledare",
 
-    "pensionär", "mogen", "pålitlig", "stabil", "mentor", "handledare",
-    "coach", "nystartsjobb", "rutinerad", "yrkesvan", "nogran", "självständig",
-    "teamledare", "arbetsledare",
-
-    "omställning", "arbetsmarknadsinsats", "introducera", "handledning",
-    "kvalitetssäkring", "processansvar", "utbilda andra", "pedagogisk",
-    "kommunikativ", "socialt kompetent", "lösningsorienterad"
+    "pensionär", "mogen", "nystartsjobb", "omställning", "arbetsmarknadsinsats",
+    "introducera", "handledning", "kvalitetssäkring", "processansvar",
+    "utbilda andra", "pedagogisk", "kommunikativ", "socialt kompetent",
+    "lösningsorienterad"
   ];
 
   const filtered = allJobs.filter(job => {
-    const text = `${job.headline} ${job.employer?.name} ${job.workplace_address?.municipality} ${job.workplace_address?.region} ${job.occupation_field?.label} ${job.description?.text}`.toLowerCase();
+    const text = `${job.headline} ${job.employer?.name} ${job.description?.text}`.toLowerCase();
 
+    // ⭐ Fritext
     const matchSearch = text.includes(searchTerm);
-    const matchRegion = regionTerm === "" || text.includes(regionTerm);
-    const matchCategory = categoryTerm === "" || text.includes(categoryTerm);
 
-    // ⭐ 45+ filter
+    // ⭐ Län (riktigt fält)
+    const jobRegion = job.workplace_address?.region?.toLowerCase() || "";
+    const matchRegion = regionTerm === "" || jobRegion.includes(regionTerm);
+
+    // ⭐ Yrkesområde (riktigt fält)
+    const jobCategory = job.occupation_field?.label?.toLowerCase() || "";
+    const matchCategory = categoryTerm === "" || jobCategory.includes(categoryTerm);
+
+    // ⭐ 45+ filter (sök i text)
     const match45plus = !is45plus || fortyFivePlusWords.some(word => text.includes(word));
 
-    // ⭐ Utan utbildningskrav
+    // ⭐ Utan utbildning (sök i text — inte API-fältet)
     const matchNoEdu =
       !noEducation ||
-      (
-        !job.must_have_education &&
-        /ingen utbildning|utan utbildning|okvalificerad|lager|städ|chaufför|bud|paketplockare|industriarbetare|montör|produktionspersonal/.test(text)
-      );
+      /ingen utbildning|utan utbildning|okvalificerad|lager|städ|chaufför|bud|paketplockare|industriarbetare|montör|produktionspersonal/.test(text);
 
     return matchSearch && matchRegion && matchCategory && match45plus && matchNoEdu;
   });
+
+  renderJobs(filtered);
+}
+
 
   renderJobs(filtered);
 }
