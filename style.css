@@ -308,22 +308,27 @@ h2 {
   border-radius: 4px;
 }
 
-/* === Kommunväljaren === */
+/* === Kommunväljaren – kompakt rullgardin === */
 #municipalityContainer {
-  flex: 1 1 100%;
+  position: absolute;
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 4px;
   padding: 8px;
-  margin-top: 6px;
+  margin-top: 4px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  z-index: 10;
 }
 
+/* === Kommunlistan – mindre och scrollbar === */
 #municipalityList {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
   gap: 4px;
-  margin-top: 8px;
-  max-height: 200px;
+  margin-top: 6px;
+  max-height: 150px;
   overflow-y: auto;
 }
 
