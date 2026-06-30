@@ -1,8 +1,8 @@
 let allJobs = [];
 
 // Hämta jobb
-fetch("https://jobsearch.api.jobtechdev.se/search?limit=2000&offset=0")
-  .then(r => r.json())
+fetch("https://api.allorigins.win/raw?url=https://jobsearch.api.jobtechdev.se/search?limit=2000&offset=0")
+ .then(r => r.json())
   .then(data => {
     allJobs = data.hits || [];
     renderJobs(allJobs);
