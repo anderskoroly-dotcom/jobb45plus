@@ -286,5 +286,18 @@ h2 {
 #loadOlderButton:hover {
     background: #003a72;
 }
+/* Kommunlista – layout i kolumner */
+#municipalityList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 4px;
+  margin-top: 8px;
+}
+
+/* Kommunlista – scroll vid många kommuner */
+#municipalityList {
+  max-height: 250px;
+  overflow-y: auto;
+}
 
 
