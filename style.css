@@ -286,18 +286,86 @@ h2 {
 #loadOlderButton:hover {
     background: #003a72;
 }
-/* Kommunlista – layout i kolumner */
+/* === Grundlayout för filterraden === */
+.filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 10px;
+  border: 2px solid #1e5aa8;
+  border-radius: 6px;
+  padding: 10px;
+  background-color: #f8f9fb;
+}
+
+/* === Enskilda filterfält === */
+.filter-container select,
+.filter-container input[type="text"] {
+  flex: 1;
+  min-width: 180px;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* === Kommunväljaren === */
+#municipalityContainer {
+  flex: 1 1 100%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px;
+  margin-top: 6px;
+}
+
 #municipalityList {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 4px;
   margin-top: 8px;
+  max-height: 200px;
+  overflow-y: auto;
 }
 
-/* Kommunlista – scroll vid många kommuner */
-#municipalityList {
-  max-height: 250px;
-  overflow-y: auto;
+/* === Knappar === */
+button {
+  border: none;
+  border-radius: 4px;
+  padding: 8px 14px;
+  color: #fff;
+  cursor: pointer;
+}
+
+#clearMunicipalities {
+  background-color: #999;
+}
+
+#clearMunicipalities:hover {
+  background-color: #777;
+}
+
+.orange-btn {
+  background-color: #f57c00;
+}
+
+.orange-btn:hover {
+  background-color: #e36a00;
+}
+
+.gray-btn {
+  background-color: #555;
+}
+
+.gray-btn:hover {
+  background-color: #444;
+}
+
+.blue-btn {
+  background-color: #1e5aa8;
+}
+
+.blue-btn:hover {
+  background-color: #174b8a;
 }
 
 
