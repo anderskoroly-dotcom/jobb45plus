@@ -31,7 +31,7 @@
       <option value="Norrbottens län">Norrbottens län</option>
     </select>
 
-    <!-- Kommun (fylls automatiskt beroende på valt län) -->
+    <!-- Kommun -->
     <select id="municipalityFilter">
       <option value="">Alla kommuner</option>
     </select>
@@ -39,14 +39,27 @@
     <!-- Yrkesområde -->
     <select id="categoryFilter">
       <option value="">Alla yrken</option>
-      <option value="IT">IT</option>
-      <option value="Vård">Vård</option>
-      <option value="Bygg">Bygg</option>
-      <option value="Utbildning">Utbildning</option>
-      <option value="Ekonomi">Ekonomi</option>
-      <option value="Transport">Transport</option>
-      <option value="Administration">Administration</option>
-      <option value="Miljö">Miljö</option>
+      <option value="Administration, ekonomi, juridik">Administration, ekonomi, juridik</option>
+      <option value="Bygg och anläggning">Bygg och anläggning</option>
+      <option value="Chefer och verksamhetsledare">Chefer och verksamhetsledare</option>
+      <option value="Data/IT">Data/IT</option>
+      <option value="Försäljning, inköp, marknadsföring">Försäljning, inköp, marknadsföring</option>
+      <option value="Hantverk">Hantverk</option>
+      <option value="Hotell, restaurang, storhushåll">Hotell, restaurang, storhushåll</option>
+      <option value="Hälso- och sjukvård">Hälso- och sjukvård</option>
+      <option value="Industriell tillverkning">Industriell tillverkning</option>
+      <option value="Installation, drift, underhåll">Installation, drift, underhåll</option>
+      <option value="Kropps- och skönhetsvård">Kropps- och skönhetsvård</option>
+      <option value="Kultur, media, design">Kultur, media, design</option>
+      <option value="Militära yrken">Militära yrken</option>
+      <option value="Naturbruk">Naturbruk</option>
+      <option value="Naturvetenskap">Naturvetenskap</option>
+      <option value="Pedagogik">Pedagogik</option>
+      <option value="Sanering och renhållning">Sanering och renhållning</option>
+      <option value="Säkerhet och bevakning">Säkerhet och bevakning</option>
+      <option value="Transport, distribution, lager">Transport, distribution, lager</option>
+      <option value="Yrken med social inriktning">Yrken med social inriktning</option>
+      <option value="Yrken med teknisk inriktning">Yrken med teknisk inriktning</option>
     </select>
 
     <!-- Extra filter -->
@@ -60,8 +73,12 @@
   <!-- Jobblista -->
   <div id="job-container"></div>
 
+  <!-- Ladda äldre jobb -->
+  <button id="loadOlderButton">Visa äldre jobb</button>
+
   <script src="jobb45plus.js"></script>
 </body>
 </html>
+
 
 
