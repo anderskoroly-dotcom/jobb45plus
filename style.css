@@ -199,4 +199,45 @@
     text-decoration: underline;
 }
 
+/* --------------------------------------------- */
+/* ⭐ FILTER-BAR (LÄGG TILL DETTA) */
+/* --------------------------------------------- */
+
+.filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-bar input,
+.filter-bar select,
+.filter-bar button {
+    font-size: 18px;
+    padding: 8px;
+    border: 2px solid var(--blue);
+    border-radius: 4px;
+}
+
+.filter-bar button {
+    background-color: var(--blue);
+    color: white;
+    cursor: pointer;
+}
+
+.filter-bar button:hover {
+    background-color: #003a72;
+}
+
+/* 45+ KNAPP */
+#filter45plus {
+    background-color: var(--orange);
+    color: white;
+}
+
+/* UTAN UTBILDNINGSKRAV */
+#filterNoEducation {
+    background-color: #666;
+    color: white;
+}
 
