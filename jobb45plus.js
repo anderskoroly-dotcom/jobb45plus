@@ -1,21 +1,21 @@
 let allJobs = [];
 
 // Hämta jobb
-fetch("https://jobsearch.api.jobtechdev.se/search?limit=1000&offset=0")
+fetch("https://jobsearch.api.jobtechdev.se/search?limit=2000&offset=0")
   .then(r => r.json())
   .then(data => {
     allJobs = data.hits || [];
     renderJobs(allJobs);
-    initRegionAndMunicipalityFilters();
-    initButtons();
+    buildRegionList();
+    setupButtons();
   })
-  .catch(error => {
-    console.error("Fel vid hämtning av jobb:", error);
-    const container = document.getElementById("job-container");
-    container.innerHTML = "<p>Kunde inte hämta jobbdata.</p>";
+  .catch(err => {
+    console.error("Fel vid hämtning:", err);
+    document.getElementById("job-container").innerHTML =
+      "<p>Kunde inte hämta jobbdata.</p>";
   });
 
-// Visa jobben
+// Visa jobb
 function renderJobs(jobs) {
   const container = document.getElementById("job-container");
   container.innerHTML = "";
@@ -45,54 +45,47 @@ function renderJobs(jobs) {
   });
 }
 
-// Bygg län- och kommun-listor dynamiskt
-function initRegionAndMunicipalityFilters() {
+// Bygg länlista
+function buildRegionList() {
   const regionSelect = document.getElementById("regionFilter");
   const municipalitySelect = document.getElementById("municipalityFilter");
 
-  // Bygg län
-  const regionsSet = new Set();
+  const regions = new Set();
   allJobs.forEach(job => {
-    const region = job.workplace_address?.region;
-    if (region) regionsSet.add(region);
+    const r = job.workplace_address?.region;
+    if (r) regions.add(r);
   });
 
   regionSelect.innerHTML = '<option value="">Alla län</option>';
-  Array.from(regionsSet)
-    .sort()
-    .forEach(region => {
-      const opt = document.createElement("option");
-      opt.value = region;
-      opt.textContent = region;
-      regionSelect.appendChild(opt);
-    });
+  Array.from(regions).sort().forEach(region => {
+    const opt = document.createElement("option");
+    opt.value = region;
+    opt.textContent = region;
+    regionSelect.appendChild(opt);
+  });
 
-  // Kommuner uppdateras när man väljer län
   municipalitySelect.innerHTML = '<option value="">Alla kommuner</option>';
 
   regionSelect.addEventListener("change", () => {
-    const selectedRegion = regionSelect.value;
+    const selected = regionSelect.value;
     municipalitySelect.innerHTML = '<option value="">Alla kommuner</option>';
 
-    if (!selectedRegion) return;
+    if (!selected) return;
 
-    const municipalitiesSet = new Set();
+    const municipalities = new Set();
     allJobs.forEach(job => {
-      const jobRegion = job.workplace_address?.region;
-      const jobMunicipality = job.workplace_address?.municipality;
-      if (jobRegion === selectedRegion && jobMunicipality) {
-        municipalitiesSet.add(jobMunicipality);
+      if (job.workplace_address?.region === selected) {
+        const m = job.workplace_address?.municipality;
+        if (m) municipalities.add(m);
       }
     });
 
-    Array.from(municipalitiesSet)
-      .sort()
-      .forEach(m => {
-        const opt = document.createElement("option");
-        opt.value = m;
-        opt.textContent = m;
-        municipalitySelect.appendChild(opt);
-      });
+    Array.from(municipalities).sort().forEach(m => {
+      const opt = document.createElement("option");
+      opt.value = m;
+      opt.textContent = m;
+      municipalitySelect.appendChild(opt);
+    });
   });
 }
 
@@ -136,7 +129,7 @@ function applyFilters(is45plus = false, noEducation = false) {
 }
 
 // Knappar
-function initButtons() {
+function setupButtons() {
   document.getElementById("searchButton").addEventListener("click", () => applyFilters());
   document.getElementById("filter45plus").addEventListener("click", () => applyFilters(true, false));
   document.getElementById("filterNoEducation").addEventListener("click", () => applyFilters(false, true));
