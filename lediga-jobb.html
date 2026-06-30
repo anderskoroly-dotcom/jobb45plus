@@ -5,6 +5,7 @@
   <title>Lediga jobb</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <h2>Lediga jobb</h2>
@@ -15,28 +16,17 @@
     <!-- Fritextsökning -->
     <input type="text" id="searchInput" placeholder="Sök jobb, ort eller arbetsgivare">
 
-    <!-- Län -->
+    <!-- Län (FYLLS DYNAMISKT AV JS) -->
     <select id="regionFilter">
       <option value="">Alla län</option>
-      <option value="Östergötlands län">Östergötlands län</option>
-      <option value="Stockholms län">Stockholms län</option>
-      <option value="Skåne län">Skåne län</option>
-      <option value="Västra Götalands län">Västra Götalands län</option>
-      <option value="Södermanlands län">Södermanlands län</option>
-      <option value="Jönköpings län">Jönköpings län</option>
-      <option value="Uppsala län">Uppsala län</option>
-      <option value="Västmanlands län">Västmanlands län</option>
-      <option value="Örebro län">Örebro län</option>
-      <option value="Kalmar län">Kalmar län</option>
-      <option value="Norrbottens län">Norrbottens län</option>
     </select>
 
-    <!-- Kommun -->
+    <!-- Kommun (FYLLS DYNAMISKT AV JS) -->
     <select id="municipalityFilter">
       <option value="">Alla kommuner</option>
     </select>
 
-    <!-- Yrkesområde -->
+    <!-- Yrkesområde (kan vara hårdkodad) -->
     <select id="categoryFilter">
       <option value="">Alla yrken</option>
       <option value="Administration, ekonomi, juridik">Administration, ekonomi, juridik</option>
@@ -73,12 +63,11 @@
   <!-- Jobblista -->
   <div id="job-container"></div>
 
-  <!-- Ladda äldre jobb -->
+  <!-- Äldre jobb (JS hanterar senare) -->
   <button id="loadOlderButton">Visa äldre jobb</button>
 
+  <!-- JavaScript -->
   <script src="jobb45plus.js"></script>
+
 </body>
 </html>
-
-
-
