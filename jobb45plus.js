@@ -1,102 +1,47 @@
-// 🔹 Kommuner per län
-const municipalitiesByRegion = {
-  "Östergötlands län": [
-    "Norrköping", "Linköping", "Motala", "Mjölby", "Finspång",
-    "Söderköping", "Vadstena", "Boxholm", "Kinda", "Ydre", "Åtvidaberg"
-  ],
-  "Stockholms län": [
-    "Stockholm", "Solna", "Sundbyberg", "Täby", "Nacka", "Södertälje",
-    "Haninge", "Huddinge", "Botkyrka", "Lidingö", "Vallentuna"
-  ],
-  "Skåne län": [
-    "Malmö", "Lund", "Helsingborg", "Kristianstad", "Trelleborg",
-    "Ängelholm", "Höganäs", "Eslöv", "Ystad", "Simrishamn"
-  ],
-  "Västra Götalands län": [
-    "Göteborg", "Borås", "Trollhättan", "Uddevalla", "Skövde",
-    "Lidköping", "Alingsås", "Kungälv", "Falköping", "Mariestad"
-  ],
-  "Södermanlands län": [
-    "Nyköping", "Oxelösund", "Eskilstuna", "Strängnäs", "Katrineholm",
-    "Flen", "Vingåker", "Gnesta", "Trosa"
-  ],
-  "Jönköpings län": [
-    "Jönköping", "Nässjö", "Vetlanda", "Tranås", "Eksjö",
-    "Gislaved", "Värnamo", "Sävsjö", "Aneby", "Mullsjö", "Habo"
-  ],
-  "Uppsala län": ["Uppsala", "Enköping", "Tierp", "Östhammar", "Heby", "Knivsta"],
-  "Västmanlands län": ["Västerås", "Köping", "Sala", "Fagersta", "Arboga", "Norberg", "Skinnskatteberg"],
-  "Örebro län": ["Örebro", "Karlskoga", "Hallsberg", "Kumla", "Lindesberg", "Laxå", "Degerfors"],
-  "Kalmar län": ["Kalmar", "Västervik", "Oskarshamn", "Nybro", "Mönsterås", "Hultsfred", "Vimmerby"],
-  "Norrbottens län": ["Luleå", "Piteå", "Boden", "Kiruna", "Gällivare", "Älvsbyn", "Kalix", "Haparanda"]
-};
+let allJobs = [];
 
-document.addEventListener("DOMContentLoaded", () => {
+// 🔹 Hämta jobb (senaste 1000 annonser i hela Sverige)
+fetch("https://jobsearch.api.jobtechdev.se/search?limit=1000&offset=0")
+  .then(response => response.json())
+  .then(data => {
+    allJobs = data.hits || [];
+    renderJobs(allJobs);
+    initRegionMunicipality();
+  })
+  .catch(err => console.error("Fel vid hämtning av jobb:", err));
+
+// 🔹 Bygg kommun-lista dynamiskt utifrån jobben
+function initRegionMunicipality() {
   const regionSelect = document.getElementById("regionFilter");
   const municipalitySelect = document.getElementById("municipalityFilter");
+
   municipalitySelect.innerHTML = '<option value="">Alla kommuner</option>';
 
   regionSelect.addEventListener("change", () => {
     const region = regionSelect.value;
     municipalitySelect.innerHTML = '<option value="">Alla kommuner</option>';
-    if (municipalitiesByRegion[region]) {
-      municipalitiesByRegion[region].forEach(m => {
+
+    if (!region) return;
+
+    const municipalitiesSet = new Set();
+
+    allJobs.forEach(job => {
+      const jobRegion = job.workplace_address?.region;
+      const jobMunicipality = job.workplace_address?.municipality;
+      if (jobRegion === region && jobMunicipality) {
+        municipalitiesSet.add(jobMunicipality);
+      }
+    });
+
+    Array.from(municipalitiesSet)
+      .sort()
+      .forEach(m => {
         const option = document.createElement("option");
         option.value = m;
         option.textContent = m;
         municipalitySelect.appendChild(option);
       });
-    }
   });
-});
-
-let allJobs = [];
-let currentBlock = 0; // 0 = senaste 30 dagar, 1 = 30–60, 2 = 60–90
-
-// 🔹 Hjälpfunktion för datum
-function formatDate(daysAgo) {
-  const d = new Date();
-  d.setDate(d.getDate() - daysAgo);
-  return d.toISOString().split("T")[0];
-}
-
-// 🔹 Hämta ett block (30 dagar)
-async function fetchJobsBlock(blockIndex) {
-  let fromDays, toDays;
-  if (blockIndex === 0) {
-    fromDays = 30;
-    toDays = 0;
-  } else if (blockIndex === 1) {
-    fromDays = 60;
-    toDays = 30;
-  } else if (blockIndex === 2) {
-    fromDays = 90;
-    toDays = 60;
-  } else {
-    return []; // inga fler block
-  }
-
-  const publishedAfter = formatDate(fromDays);
-  const publishedBefore = formatDate(toDays);
-
-  let offset = 0;
-  const limit = 1000;
-  let results = [];
-  let more = true;
-
-  while (more) {
-    const url = `https://jobsearch.api.jobtechdev.se/search?limit=${limit}&offset=${offset}&published-after=${publishedAfter}&published-before=${publishedBefore}`;
-    const res = await fetch(url);
-    const data = await res.json();
-    if (data.hits && data.hits.length > 0) {
-      results = results.concat(data.hits);
-      offset += limit;
-    } else {
-      more = false;
-    }
-  }
-
-  return results;
 }
 
 // 🔹 Visa jobben
@@ -104,8 +49,8 @@ function renderJobs(jobs) {
   const container = document.getElementById("job-container");
   container.innerHTML = "";
 
-  if (jobs.length === 0) {
-    container.innerHTML = "<p>Inga jobb hittades med dessa filter.</p>";
+  if (!jobs || jobs.length === 0) {
+    container.innerHTML = "<p>Inga jobb hittades.</p>";
     return;
   }
 
@@ -153,7 +98,7 @@ function applyFilters(is45plus = false, noEducation = false) {
     const jobMunicipality = job.workplace_address?.municipality?.toLowerCase() || "";
     const jobCategory = job.occupation_field?.label?.toLowerCase() || "";
 
-    const matchSearch = text.includes(searchTerm);
+    const matchSearch = searchTerm === "" || text.includes(searchTerm);
     const matchRegion = regionTerm === "" || jobRegion.includes(regionTerm);
     const matchMunicipality = municipalityTerm === "" || jobMunicipality.includes(municipalityTerm);
     const matchCategory = categoryTerm === "" || jobCategory.includes(categoryTerm);
@@ -168,27 +113,13 @@ function applyFilters(is45plus = false, noEducation = false) {
   renderJobs(filtered);
 }
 
-// 🔹 Init: hämta första 30 dagar
-(async () => {
-  const block0 = await fetchJobsBlock(0);
-  allJobs = allJobs.concat(block0);
-  renderJobs(allJobs);
-})();
-
 // 🔹 Knappar
 document.getElementById("searchButton").addEventListener("click", () => applyFilters());
 document.getElementById("filter45plus").addEventListener("click", () => applyFilters(true, false));
 document.getElementById("filterNoEducation").addEventListener("click", () => applyFilters(false, true));
 
-document.getElementById("loadOlderButton").addEventListener("click", async () => {
-  if (currentBlock >= 2) {
-    alert("Inga äldre jobb (max 90 dagar bakåt).");
-    return;
-  }
-  currentBlock++;
-  const moreJobs = await fetchJobsBlock(currentBlock);
-  allJobs = allJobs.concat(moreJobs);
-  applyFilters(); // behåll aktuella filter när vi lägger till fler jobb
+// "Visa äldre jobb"-knappen kan vara tom tills vi bygger blocken igen
+document.getElementById("loadOlderButton").addEventListener("click", () => {
+  alert("Just nu visas senaste 1000 jobben. Vi kan bygga äldre-block senare.");
 });
-
 
