@@ -1,14 +1,20 @@
 let allJobs = [];
 
 // Hämta jobb
-fetch("https://api.allorigins.win/raw?url=https://jobsearch.api.jobtechdev.se/search?limit=2000&offset=0")
- .then(r => r.json())
-  .then(data => {
-    allJobs = data.hits || [];
-    renderJobs(allJobs);
-    buildRegionList();
-    setupButtons();
+fetch("https://api.allorigins.win/get?url=" + encodeURIComponent("https://jobsearch.api.jobtechdev.se/search?limit=2000&offset=0"))
+  .then(r => r.json())
+  .then(data => JSON.parse(data.contents))
+  .then(realData => {
+      allJobs = realData.hits || [];
+      renderJobs(allJobs);
+      buildRegionList();
+      setupButtons();
   })
+  .catch(err => {
+      console.error("Fel vid hämtning:", err);
+      document.getElementById("job-container").innerHTML = "<p>Kunde inte hämta jobbdata.</p>";
+  });
+
   .catch(err => {
     console.error("Fel vid hämtning:", err);
     document.getElementById("job-container").innerHTML =
