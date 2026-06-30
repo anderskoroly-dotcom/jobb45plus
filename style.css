@@ -241,3 +241,133 @@
     color: white;
 }
 
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f7fa;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
+
+/* Rubrik */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #004a99;
+}
+
+/* Filterfält */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.filter-bar input,
+.filter-bar select,
+.filter-bar button {
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.filter-bar input {
+  flex: 1;
+  min-width: 200px;
+}
+
+.filter-bar select {
+  min-width: 180px;
+}
+
+.filter-bar button {
+  background: #0078d4;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.filter-bar button:hover {
+  background: #005fa3;
+}
+
+/* Extra filter-knappar */
+#filter45plus {
+  background: #ff9800;
+}
+
+#filter45plus:hover {
+  background: #e68900;
+}
+
+#filterNoEducation {
+  background: #4caf50;
+}
+
+#filterNoEducation:hover {
+  background: #3e8e41;
+}
+
+/* Jobblista */
+#job-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Jobbkort */
+.job-item {
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 5px solid #0078d4;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.job-item h3 {
+  margin-top: 0;
+  color: #004a99;
+}
+
+.job-item p {
+  margin: 5px 0;
+}
+
+.job-item a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: #0078d4;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.job-item a:hover {
+  background: #005fa3;
+}
+
+/* Ladda äldre jobb-knappen */
+#loadOlderButton {
+  display: block;
+  margin: 20px auto;
+  padding: 12px 20px;
+  font-size: 16px;
+  background: #444;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#loadOlderButton:hover {
+  background: #222;
+}
