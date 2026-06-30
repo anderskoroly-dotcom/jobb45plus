@@ -2,25 +2,50 @@
 <html lang="sv">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lediga jobb – Jobb45+</title>
+  <title>Lediga jobb</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <section class="job-list">
   <h2>Lediga jobb</h2>
 
-  <!-- 🔍 Sökfält -->
-  <input type="text" id="searchInput" placeholder="Sök jobb, ort eller arbetsgivare">
-  <button id="searchButton">Sök</button>
+  <!-- 🔍 Sökfält och filter -->
+  <div class="filter-bar">
+    <input type="text" id="searchInput" placeholder="Sök jobb, ort eller arbetsgivare">
 
-  <div id="job-container">
-    <!-- Jobbannonser kommer att laddas här -->
+    <select id="regionFilter">
+      <option value="">Alla län</option>
+      <option value="Östergötlands län">Östergötlands län</option>
+      <option value="Stockholms län">Stockholms län</option>
+      <option value="Skåne län">Skåne län</option>
+      <option value="Västra Götalands län">Västra Götalands län</option>
+      <option value="Jönköpings län">Jönköpings län</option>
+      <option value="Uppsala län">Uppsala län</option>
+      <option value="Västmanlands län">Västmanlands län</option>
+      <option value="Örebro län">Örebro län</option>
+      <option value="Kalmar län">Kalmar län</option>
+      <option value="Norrbottens län">Norrbottens län</option>
+    </select>
+
+    <select id="categoryFilter">
+      <option value="">Alla yrken</option>
+      <option value="IT">IT</option>
+      <option value="Vård">Vård</option>
+      <option value="Bygg">Bygg</option>
+      <option value="Utbildning">Utbildning</option>
+      <option value="Ekonomi">Ekonomi</option>
+      <option value="Transport">Transport</option>
+      <option value="Administration">Administration</option>
+      <option value="Miljö">Miljö</option>
+    </select>
+
+    <button id="searchButton">Sök</button>
   </div>
-</section>
 
+  <!-- Jobblista -->
+  <div id="job-container"></div>
 
   <script src="jobb45plus.js"></script>
 </body>
 </html>
+
