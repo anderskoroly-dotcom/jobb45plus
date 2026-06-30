@@ -118,8 +118,3 @@ document.getElementById("searchButton").addEventListener("click", () => applyFil
 document.getElementById("filter45plus").addEventListener("click", () => applyFilters(true, false));
 document.getElementById("filterNoEducation").addEventListener("click", () => applyFilters(false, true));
 
-// "Visa äldre jobb"-knappen kan vara tom tills vi bygger blocken igen
-document.getElementById("loadOlderButton").addEventListener("click", () => {
-  alert("Just nu visas senaste 1000 jobben. Vi kan bygga äldre-block senare.");
-});
-
