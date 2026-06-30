@@ -40,18 +40,40 @@ function applyFilters(is45plus = false, noEducation = false) {
   const regionTerm = document.getElementById("regionFilter").value.toLowerCase();
   const categoryTerm = document.getElementById("categoryFilter").value.toLowerCase();
 
+  const fortyFivePlusWords = [
+    "erfaren", "rutinerad", "yrkesvan", "mångårig", "gedigen", "lång erfarenhet",
+    "trygg i rollen", "självgående", "självständig", "stabil", "pålitlig",
+    "noggrann", "ansvarsfull", "kvalitetsmedveten", "strukturerad", "metodisk",
+
+    "mentor", "handledare", "coach", "teamledare", "arbetsledare", "gruppledare",
+    "senior", "specialist", "expert", "chef", "ledare",
+
+    "pensionär", "mogen", "pålitlig", "stabil", "mentor", "handledare",
+    "coach", "nystartsjobb", "rutinerad", "yrkesvan", "nogran", "självständig",
+    "teamledare", "arbetsledare",
+
+    "omställning", "arbetsmarknadsinsats", "introducera", "handledning",
+    "kvalitetssäkring", "processansvar", "utbilda andra", "pedagogisk",
+    "kommunikativ", "socialt kompetent", "lösningsorienterad"
+  ];
+
   const filtered = allJobs.filter(job => {
-    const text = `${job.headline} ${job.employer?.name} ${job.workplace_address?.municipality} ${job.workplace_address?.region} ${job.occupation_field?.label}`.toLowerCase();
+    const text = `${job.headline} ${job.employer?.name} ${job.workplace_address?.municipality} ${job.workplace_address?.region} ${job.occupation_field?.label} ${job.description?.text}`.toLowerCase();
 
     const matchSearch = text.includes(searchTerm);
     const matchRegion = regionTerm === "" || text.includes(regionTerm);
     const matchCategory = categoryTerm === "" || text.includes(categoryTerm);
 
-    // 45+ filter (heuristik: ord som "erfaren", "senior", "specialist")
-    const match45plus = !is45plus || /erfaren|senior|specialist|chef|ledare/.test(text);
+    // ⭐ 45+ filter
+    const match45plus = !is45plus || fortyFivePlusWords.some(word => text.includes(word));
 
-    // Utan utbildningskrav (heuristik: saknar utbildningsfält eller nämner "ingen utbildning krävs")
-    const matchNoEdu = !noEducation || (!job.must_have_education && /ingen utbildning|utan utbildning|okvalificerad|lager|städ|chaufför/.test(text));
+    // ⭐ Utan utbildningskrav
+    const matchNoEdu =
+      !noEducation ||
+      (
+        !job.must_have_education &&
+        /ingen utbildning|utan utbildning|okvalificerad|lager|städ|chaufför|bud|paketplockare|industriarbetare|montör|produktionspersonal/.test(text)
+      );
 
     return matchSearch && matchRegion && matchCategory && match45plus && matchNoEdu;
   });
